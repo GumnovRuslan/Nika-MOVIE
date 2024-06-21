@@ -1,0 +1,48 @@
+@import "/src/mixins.scss";
+
+.logo {
+  width: max-content;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 10px;
+
+  &:hover {
+    & .logo__icon,
+    & .logo__text {
+      color: var(--color-red);
+    }
+  }
+
+  &__icon {
+    flex: 1 0 auto;
+    transition: 0.2s;
+    color: var(--color-text-primary);
+
+    @include media-breakpoint-up(xxxl) {
+      max-width: 30px;
+      max-height: 30px;
+    }
+
+    @include media-breakpoint-down(xxxl) {
+      max-width: 26px;
+      max-height: 26px;
+    }
+  }
+
+  &__text {
+    font-weight: 700;
+    text-wrap: nowrap;
+    transition: 0.2s;
+    color: var(--color-text-primary);
+
+    @include media-breakpoint-up(md) {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    @include media-breakpoint-between(sm, md) {
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+}

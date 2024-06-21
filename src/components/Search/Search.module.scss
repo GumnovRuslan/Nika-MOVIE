@@ -1,0 +1,41 @@
+@import "../../mixins.scss";
+
+$button-size: 30px;
+$icon-size: 20px;
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.2s;
+  color: var(--color-text-primary);
+
+  &:hover {
+    background: #4d4d4d;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    width: calc($button-size + 10px);
+    height: calc($button-size + 10px);
+  }
+
+  @include media-breakpoint-down(xxxl) {
+    width: $button-size;
+    height: $button-size;
+  }
+
+  &__icon {
+    color: inherit;
+
+    @include media-breakpoint-up(xxxl) {
+      max-width: calc($icon-size + 5px);
+      max-height: calc($icon-size + 5px);
+    }
+
+    @include media-breakpoint-down(xxxl) {
+      max-width: $icon-size;
+      max-height: $icon-size;
+    }
+  }
+}

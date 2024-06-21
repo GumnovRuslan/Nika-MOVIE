@@ -1,0 +1,132 @@
+@import "/src/mixins.scss";
+@import "/src/function.scss";
+
+$min-width-card: 200px;
+$max-width-card: 500px;
+
+.card {
+  display: block;
+
+  &:hover {
+    & .card__info {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    & .card__title {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &__title {
+    transition: 0.3s;
+    font-size: 20px;
+    color: var(--color-text-primary);
+  }
+
+  &__inner {
+    min-width: $min-width-card;
+    max-width: $max-width-card;
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #3b3b3b;
+    box-shadow: 0 0 5px #2c2c2c;
+    margin-bottom: 10px;
+  }
+
+  &__cover {
+    min-width: inherit;
+    width: inherit;
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(/src/assets/image/movie.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__info {
+    flex: content;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    flex: content;
+    background-color: set-opacity(#000, 0.65);
+    backdrop-filter: blur(5px);
+  }
+
+  &__info_inner {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  &__info_title {
+    text-wrap: nowrap;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  &__info_title_link {
+    color: inherit;
+
+    &:hover {
+      color: var(--color-text-third);
+    }
+  }
+
+  &__info_description {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &__info_genres {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__info_statistics {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__info_statistics_size,
+  &__info_statistics_date,
+  &__info_statistics_time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__info_statistics_icon {
+    flex: 1 0 auto;
+    max-width: 22px;
+    max-height: 22px;
+  }
+
+  &__info_statistics_data {
+    text-wrap: nowrap;
+    font-size: 16px;
+  }
+}

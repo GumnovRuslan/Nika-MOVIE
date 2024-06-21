@@ -1,0 +1,11 @@
+@import "/src/function.scss";
+
+.container {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+
+  &::backdrop {
+    background: set-opacity(#000, 0.6);
+  }
+}

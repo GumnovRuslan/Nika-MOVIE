@@ -1,0 +1,245 @@
+@import "/src/mixins.scss";
+
+.footer {
+  padding: 0 60px;
+  background: #2c2c2c;
+
+  @include media-breakpoint-up(xxxl) {
+    padding: 0 160px;
+  }
+
+  @include media-breakpoint-between(xxl, xxxl) {
+    padding: 0 100px;
+  }
+
+  @include media-breakpoint-between(lg, xxl) {
+    padding: 0 60px;
+  }
+
+  // @include media-breakpoint-between(lg, xl) {
+  //   padding: 0 70px;
+  // }
+
+  // @include media-breakpoint-between(md, lg) {
+  //   padding: 0 70px;
+  // }
+
+  @include media-breakpoint-down(lg) {
+    padding: 0 15px;
+  }
+
+  &__inner {
+    display: flex;
+    column-gap: 20px;
+    row-gap: 30px;
+    justify-content: space-between;
+    padding: 40px 0;
+
+    @include media-breakpoint-down(lg) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__main {
+    display: inline-flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      gap: 25px;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      gap: 15px;
+    }
+  }
+
+  &__networks {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__network {
+    transition: 0.2s;
+    display: inline-block;
+    color: var(--color-bg-primary);
+
+    &:hover {
+      color: var(--color-bg-secondary);
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      max-width: 28px;
+      max-height: 28px;
+    }
+
+    @include media-breakpoint-down(xxxl) {
+      max-width: 22px;
+      max-height: 22px;
+    }
+  }
+
+  &__description {
+    @include media-breakpoint-up(xxxl) {
+      max-width: 400px;
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    @include media-breakpoint-down(xxxl) {
+      max-width: 300px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      gap: 25px;
+    }
+
+    @include media-breakpoint-down(md) {
+      gap: 15px;
+    }
+  }
+
+  &__block_title {
+    font-weight: 700;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 28px;
+    }
+
+    @include media-breakpoint-down(xxxl) {
+      font-size: 24px;
+    }
+  }
+
+  &__block_links {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      gap: 13px;
+    }
+
+    @include media-breakpoint-down(md) {
+      gap: 8px;
+    }
+  }
+
+  &__block_link {
+    max-width: max-content;
+    padding: 5px 0;
+    transition: 0.2s;
+    color: var(--color-text-primary);
+
+    &:hover {
+      color: var(--color-bg-secondary);
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 24px;
+    }
+
+    @include media-breakpoint-down(xxxl) {
+      font-size: 18px;
+    }
+  }
+
+  &__subscription {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(lg) {
+      max-width: 26%;
+
+      .footer__description {
+        max-width: 100%;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      max-width: 100%;
+
+      .footer__description {
+        max-width: 400px;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      gap: 25px;
+    }
+
+    @include media-breakpoint-down(md) {
+      gap: 15px;
+    }
+  }
+
+  &__input_container {
+    position: relative;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 46px;
+    border: none;
+    border-radius: 5px;
+
+    background: #666666;
+    color: var(--color-text-primary);
+
+    &::placeholder {
+      color: var(--color-text-primary);
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 0 47px 0 15px;
+      height: 56px;
+      font-size: 20px;
+
+      &::placeholder {
+        font-size: 18px;
+      }
+    }
+
+    @include media-breakpoint-down(xxxl) {
+      padding: 0 47px 0 10px;
+      height: 46px;
+      font-size: 16px;
+
+      &::placeholder {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__input_icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(0, -50%);
+    display: inline-block;
+    transition: 0.2s;
+    color: var(--color-bg-primary);
+
+    &:hover {
+      color: var(--color-bg-secondary);
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      max-width: 28px;
+      max-height: 28px;
+    }
+
+    @include media-breakpoint-down(xxxl) {
+      max-width: 22px;
+      max-height: 22px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  transition: 0.2s;
+
+  &_primary {
+    border: 2px solid var(--color-btn-primary);
+    background: var(--color-btn-primary);
+
+    &:hover {
+      border-color: var(--color-btn-secondary);
+      background: var(--color-btn-secondary);
+      color: var(--color-btn-primary);
+    }
+  }
+
+  &_secondary {
+    border: 2px solid var(--color-btn-secondary);
+
+    &:hover {
+      background: var(--color-btn-secondary);
+      color: var(--color-btn-primary);
+    }
+  }
+}

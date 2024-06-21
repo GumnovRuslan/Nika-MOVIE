@@ -1,0 +1,128 @@
+@import "/src/mixins.scss";
+
+.card {
+  &__inner {
+    position: relative;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--color-bg-third-light);
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+      width: 290px;
+    }
+  }
+
+  &__mark {
+    position: absolute;
+    left: 0;
+    top: 6%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: var(--color-bg-secondary);
+  }
+
+  &__mark_text {
+    @include media-breakpoint-up(xxxl) {
+      padding: 8px 15px;
+      font-size: 22px;
+    }
+
+    @include media-breakpoint-between(xxl, xxxl) {
+      padding: 8px 15px;
+      font-size: 20px;
+    }
+
+    @include media-breakpoint-down(xxl) {
+      padding: 5px 10px;
+      font-size: 13px;
+    }
+  }
+
+  &__image {
+    background-image: url("/src/assets/image/movie.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include media-breakpoint-up(sm) {
+      width: 14vw;
+      height: 14vw;
+      min-height: 160px;
+      min-width: 160px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__detail {
+    flex: content;
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(xxl) {
+      padding: 20px;
+      gap: 20px;
+    }
+
+    @include media-breakpoint-between(lg, xxl) {
+      padding: 20px 15px;
+      gap: 13px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      padding: 15px 10px;
+      gap: 10px;
+    }
+  }
+
+  &__name {
+    @include media-breakpoint-up(xxl) {
+      font-size: 30px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      font-size: 24px;
+    }
+
+    @include media-breakpoint-down(xl) {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      font-size: 22px;
+    }
+  }
+
+  &__info {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
+    @include media-breakpoint-up(xxl) {
+      font-size: 24px;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      font-size: 18px;
+    }
+
+    @include media-breakpoint-down(xl) {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import "/src/mixins.scss";
+
+.title {
+  margin-bottom: 30px;
+
+  &__link,
+  &__container {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--color-text-primary);
+
+    &:hover {
+      color: var(--color-btn-primary);
+
+      & .title__icon {
+        transform: translateX(10px);
+      }
+    }
+  }
+
+  &__text {
+    color: inherit;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 40px;
+    }
+
+    @include media-breakpoint-down(xxxl) {
+      font-size: 30px;
+    }
+  }
+
+  &__icon {
+    transition: 0.3s;
+    display: inline-block;
+    max-width: 30px;
+    max-height: 30px;
+    color: inherit;
+  }
+}
